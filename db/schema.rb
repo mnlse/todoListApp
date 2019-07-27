@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_27_075130) do
+ActiveRecord::Schema.define(version: 2019_07_27_095428) do
 
   create_table "td_lists", force: :cascade do |t|
     t.string "name"
@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 2019_07_27_075130) do
   end
 
   create_table "todo_items", force: :cascade do |t|
-    t.integer "todo_list_id"
+    t.integer "td_list_id"
     t.string "name"
     t.boolean "is_done"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
+    t.index ["td_list_id"], name: "index_todo_items_on_td_list_id"
   end
 
 end
